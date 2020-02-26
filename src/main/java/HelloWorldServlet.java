@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 
 
 
-@WebServlet ({"/hello", "/hello?name=", "/count"})
+@WebServlet ({"/hello"})
 public class HelloWorldServlet extends HttpServlet {
 
     int pageCounter = 0;
@@ -17,27 +17,18 @@ public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
         pageCounter++;
-        res.setContentType("text/html");
+
 
         String n = req.getParameter("name");
         PrintWriter out = res.getWriter();
 
-        if (n.length() > -2 ){
+        if (n == null ){
             out.println("<h3>Hello World!</h3>");
-            out.println("<p>Page Visists =" + pageCounter+ "</p>");
-        } else {
-            out.println("<h3>Hello " + n + "!</h3>");
+            out.println("<p>Page Visits =" + pageCounter+ "</p>");
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("text/html");
-        pageCounter++;
-
-        String counter = req.getParameter("count");
-        PrintWriter out = res.getWriter();
-
-        out.println("<h4>Page count is: " + counter + "<h4>");
+        out.println("<h3>Hello " + n + "!</h3>");
+        out.println("<p>Page Visits =" + pageCounter+ "</p>");
     }
+
 }
