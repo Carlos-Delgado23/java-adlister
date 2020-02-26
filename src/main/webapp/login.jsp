@@ -6,6 +6,8 @@
 </head>
 <body>
 
+
+
     <div style="text-align: center;">
         <h4>Login</h4>
             <form action="profile.jsp" method="POST">
@@ -14,6 +16,16 @@
                 <input type="submit" value="Submit">
             </form>
     </div>
+
+    <%
+        if (request.getParameter("username") != null && request.getParameter("password") != null){
+            if (request.getParameter("username").equals("admin") && request.getParameter("password").equals("password")){
+                response.sendRedirect("/profile.jsp");
+            } else {
+                response.sendRedirect("/login.jsp");
+            }
+        }
+    %>
 
 </body>
 </html>
