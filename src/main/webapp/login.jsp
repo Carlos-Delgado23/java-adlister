@@ -4,7 +4,6 @@
 <html>
 <head>
     <%@ include file="partials/head.jsp" %>
-<%--    <link rel="stylesheet" href="./css/custom.css" type="text/css">--%>
     <title>Login</title>
 </head>
 <body class="d-flex justify-content-center align-items-center">
@@ -14,13 +13,11 @@
         <h4 class="text-center pb-3"><i class="far fa-user fa-3x"></i></h4>
             <form action="login.jsp" method="POST" class="">
                 <div class="d-flex justify-content-between align-items-center pb-2">
-<%--                    <label for="username" class="pr-1"></label>--%>
                     <input type="text" name="username" id="username" placeholder="Username"
                            class="text-center username"
                            required><br>
                 </div>
                 <div class="d-flex justify-content-between align-items-center pb-2">
-<%--                    <label for="password" class="pr-1"></label>--%>
                     <input type="password" name="password" id="password" placeholder="Password"
                            class="text-center password" required><br>
                 </div>
