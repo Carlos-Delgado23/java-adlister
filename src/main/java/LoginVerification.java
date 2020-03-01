@@ -19,7 +19,9 @@ public class LoginVerification extends HttpServlet {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             if (username.equals("admin") && password.equals("password")) {
-                response.sendRedirect("/profile");
+                response.sendRedirect("/profile.jsp?username="+username);
+            } else {
+                response.sendRedirect("/login.jsp");
             }
         }
     }
