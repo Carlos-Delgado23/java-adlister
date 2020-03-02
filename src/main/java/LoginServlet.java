@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/login")
-public class LoginVerification extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.getRequestDispatcher("/login.jsp").forward(request, response);
@@ -18,7 +18,7 @@ public class LoginVerification extends HttpServlet {
         if (request.getMethod().equalsIgnoreCase("post")) {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            if (username.equals("admin") && password.equals("password")) {
+            if (username != null && username.equals("admin") && password != null && password.equals("password")) {
                 response.sendRedirect("/profile.jsp?username="+username);
             } else {
                 response.sendRedirect("/login.jsp");
