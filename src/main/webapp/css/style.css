@@ -1,0 +1,14 @@
+
+#custom body {
+    padding: 0;
+    margin: 0;
+    background-color: #414141 !important;
+}
+
+#custom>h1 {
+    font-family: 'Permanent Marker', cursive !important;
+}
+
+#custom>h5 {
+    font-family: 'Shadows Into Light', cursive !important;
+}
