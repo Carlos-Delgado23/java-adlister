@@ -19,10 +19,15 @@ public class ListItemsDao implements Items {
         items.add(new Item(2, "AAPE Camo Smock Jacket", 295.00));
         items.add(new Item(20, "Adidas Hamburg", 109.00));
         items.add(new Item(15, "Nike x Undercover Air Max", 129.00));
-        items.add(new Item(10, "Champion Reverse Weave Script Hoody", 69.00));
+        items.add(new Item(10, "Champion Script Hoody", 69.00));
         items.add(new Item(8, "Adidas Adilette", 29.00));
         items.add(new Item(5, "Nike Air Max 720", 119.00));
-        items.add(new Item(18, "Nike ACG All Over Print Shirt", 55.00));
+        items.add(new Item(18, "Nike ACG Print Shirt", 55.00));
         return items;
     }
+
+    public void insert(Item item) {
+        this.items.add(item);
+    }
+
 }
